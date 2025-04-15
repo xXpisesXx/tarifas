@@ -2,8 +2,8 @@
     --text-color-pri: rgb(32, 33, 36);
     --text-color-seg: rgb(95, 99, 104);
     --text-color-ter: #20BEFF;
-
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,20 +11,42 @@
     font-family: Helvetica;
     border: 0 solid rgb(218, 220, 224);
 }
+
 body {
     padding: 1rem;
     color: var(--text-color-pri);
 }
+
+input[type=text] {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border-width: 1px;
+    margin-bottom: 12px;
+}
+
 table {
     width: 100%;
-    border-collapse: collapse;;
+    border-collapse: collapse;
+    border-width: 1px;
+    font-size: 18px;
 }
-thead tr th:first-child, tbody tr td:first-child  {
+
+thead tr th:first-child,
+tbody tr td:first-child {
     text-align: left;
 }
-thead tr th:last-child, tbody tr td:last-child {
+
+thead tr th:last-child,
+tbody tr td:last-child {
     text-align: end;
 }
-tbody tr td {
-    text-align: center;
-}
+
+thead th, tbody tr td {padding: 12px;}
+
+tr {border-bottom-width: 1px;}
+
+th, tr:hover {background-color: #f1f1f1;}
