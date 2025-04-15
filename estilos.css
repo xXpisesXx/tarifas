@@ -1,0 +1,30 @@
+:root {
+    --text-color-pri: rgb(32, 33, 36);
+    --text-color-seg: rgb(95, 99, 104);
+    --text-color-ter: #20BEFF;
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    border: 0 solid rgb(218, 220, 224);
+}
+body {
+    padding: 1rem;
+    color: var(--text-color-pri);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;;
+}
+thead tr th:first-child, tbody tr td:first-child  {
+    text-align: left;
+}
+thead tr th:last-child, tbody tr td:last-child {
+    text-align: end;
+}
+tbody tr td {
+    text-align: center;
+}

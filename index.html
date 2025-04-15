@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Radio Movil VA</title>
+</head>
+
+<body>
+    <input type="text" id="buscador" onkeyup="BuscadorDeTabla ()" placeholder="Buscar tarifa...">
+    <section>
+        <table id="miTabla">
+            <tr>
+                <td>plaza bolivar</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Hospital benicno sanchez</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>hola 3</td>
+            </tr>
+            <tr>
+                <td>hola 4</td>
+            </tr>
+            <tr>
+                <td>hola 5</td>
+            </tr>
+        </table>
+    </section>
+    <script>
+
+        function BuscadorDeTabla () {
+            let input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("buscador");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("miTabla");
+            tr = table.getElementsByTagName("tr");
+
+            const regexPattern = filter.split('').join('.*');
+            const regex = new RegExp(regexPattern, 'i'); // 'i' = ignorar mayúsculas
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    tr[i].style.display = regex.test(txtValue) ? "" : "none";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
