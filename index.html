@@ -11,33 +11,46 @@
 <body>
     <input type="text" id="buscador" onkeyup="BuscadorDeTabla ()" placeholder="Buscar tarifa...">
     <section>
-        <table id="miTabla">
-            <tr>
-                <td>plaza bolivar</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>Hospital benicno sanchez</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>hola 3</td>
-            </tr>
-            <tr>
-                <td>hola 4</td>
-            </tr>
-            <tr>
-                <td>hola 5</td>
-            </tr>
+        <table>
+            <thead>
+                <th>Ubicacion</th>
+                <th>tarifa</th>
+            </thead>
+            <tbody id="miTabla">
+                <tr>
+                    <td>plaza bolivar</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Hospital benicno sanchez</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>hola</td>
+                </tr>
+            </tbody>
         </table>
-    </section>
-    <script>
 
-        function BuscadorDeTabla () {
-            let input, filter, table, tr, td, i, txtValue;
+    </section>
+    <script src="listaLugares.js"></script>
+    <script>
+        let table = document.getElementById("miTabla");
+        table.innerHTML = '';
+
+        locaciones.forEach(lugar => {
+            const nombreLugar = lugar.nombre.toUpperCase();
+            const tr = document.createElement('tr');
+            const td = [document.createElement('td'), document.createElement('td')]
+            td[0].textContent = `${lugar.nombre}`;
+            td[1].textContent = `${lugar.precio}`;
+            tr.append(...td);
+            table.append(tr);
+        });
+
+        function BuscadorDeTabla() {
+            let input, filter, tr, td, i, txtValue;
             input = document.getElementById("buscador");
             filter = input.value.toUpperCase();
-            table = document.getElementById("miTabla");
             tr = table.getElementsByTagName("tr");
 
             const regexPattern = filter.split('').join('.*');
