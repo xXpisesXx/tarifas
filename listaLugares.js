@@ -5,10 +5,21 @@ const locaciones = [
     { nombre: "villa moderna", precio: '12-15' },
     { nombre: "antofagasta norte", precio: '15-20' },
     { nombre: "antofagasta sud", precio: '10-15' },
+    { nombre: "antofagasta parque de aves", precio: '20' }
     { nombre: "piscina san isidro", precio: '15-20' },
-    { nombre: "el paso", precio: '35-40' },
-    { nombre: "tiquipaya", precio: '35-40' },
+    { nombre: "el paso", precio: '40' },
+    { nombre: "tiquipaya", precio: '50' },
     { nombre: "kilometro 5", precio: '30' },
     { nombre: "kilometro 10", precio: '15-20' },
-    { nombre: "puente beigin", precio: '35' }
+    { nombre: "feicobol", precio: '70' },
+    { nombre: "puente beigin", precio: '35' },
+    { nombre: "fexco", precio: '70' },
+    { nombre: "cruce taquiña", precio: '55-60' },
+    { nombre: "sacaba plaza", precio: '80-90' },
+    { nombre: "sipe sipe", precio: '40' },
+    { nombre: "barrio cami", precio: '40' },
+    { nombre: "bella vista colegio", precio: '35' },
+    { nombre: "bella vista tecnológico", precio: '40-45' },
+    { nombre: "terminal cochabamba", precio: '50' },
+    { nombre: "terminal quillacollo", precio: '15' }
 ];
