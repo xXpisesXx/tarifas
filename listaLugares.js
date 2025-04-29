@@ -5,7 +5,7 @@ const locaciones = [
     { nombre: "villa moderna", precio: '12-15' },
     { nombre: "antofagasta norte", precio: '15-20' },
     { nombre: "antofagasta sud", precio: '10-15' },
-    { nombre: "antofagasta parque de aves", precio: '20' }
+    { nombre: "antofagasta parque de aves", precio: '20' },
     { nombre: "piscina san isidro", precio: '15-20' },
     { nombre: "el paso", precio: '40' },
     { nombre: "tiquipaya", precio: '50' },
