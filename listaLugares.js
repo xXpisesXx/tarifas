@@ -27,7 +27,7 @@ const locaciones = [
     { nombre: "barrio esmeralda", precio: '15' },
     { nombre: "villa carmen", precio: '15' },
 { nombre: "santo domingo", precio: '10' },
-{ nombre: "tiquitani", precio: '20' },
+{ nombre: "tiquirani", precio: '20' },
 { nombre: "loma linda", precio: '35' },
 { nombre: "berenguela", precio: '20-25' },
 { nombre: "concordia quillacollo", precio: '15' },
