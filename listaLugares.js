@@ -64,5 +64,6 @@ const locaciones = [
 { nombre: "colegio sagrada familia vinto", precio: '15' },
 { nombre: "colegio cerro cota", precio: '25-30' },
 { nombre: "colegio cristina prado", precio: '12' },
-{ nombre: "tecnológico incos nro 3", precio: '20' }
+{ nombre: "tecnológico incos nro 3", precio: '20' },
+     { nombre: "pandoja", precio: '30' }
 ];
