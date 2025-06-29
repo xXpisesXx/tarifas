@@ -5,67 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>Radio Movil VA</title>
+    <title>Tarifario Radio Movil VA</title>
 </head>
 
 <body>
-    <input type="text" id="buscador" onkeyup="BuscadorDeTabla ()" placeholder="Buscar tarifa...">
-    <section>
-        <table>
-            <thead>
-                <th>Ubicacion</th>
-                <th>tarifa</th>
-            </thead>
-            <tbody id="miTabla">
-                <tr>
-                    <td>plaza bolivar</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>Hospital benicno sanchez</td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td>hola</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </section>
+    <input type="text" id="buscador" onkeyup="Buscar()" placeholder="Buscar tarifa...">
+ <h4>Ubicación</h4>
+ <ul id="lista-lugares">
+  <li>
+   <b>plaza bolivar</b>
+   <p><b>$</b> 10</p>
+  </li>
+  <li>
+   <b>quillacollo</b>
+   <p><b>$</b> 10 - 15</p>
+  </li>
+  <li>
+   <b>cochabamba</b>
+   <p><b>$</b> 40</p>
+  </li>
+ </ul>
     <script src="listaLugares.js"></script>
     <script>
-        let table = document.getElementById("miTabla");
-        table.innerHTML = '';
+        const lista = document.getElementById("lista-lugares");
 
-        locaciones.forEach(lugar => {
-            const nombreLugar = lugar.nombre.toUpperCase();
-            const tr = document.createElement('tr');
-            const td = [document.createElement('td'), document.createElement('td')]
-            td[0].textContent = `${lugar.nombre}`;
-            td[1].textContent = `${lugar.precio}`;
-            tr.append(...td);
-            table.append(tr);
-        });
+    // Función para mostrar todos los lugares
+    function mostrarLocaciones(filtro = '') {
+      lista.innerHTML = ''; // Limpiar la lista
+      const regexPattern = filtro.split('').join('.*'); // patrón flexible
+      const regex = new RegExp(regexPattern, 'i');
 
-        function BuscadorDeTabla() {
-            let input, filter, tr, td, i, txtValue;
-            input = document.getElementById("buscador");
-            filter = input.value.toUpperCase();
-            tr = table.getElementsByTagName("tr");
-
-            const regexPattern = filter.split('').join('.*');
-            const regex = new RegExp(regexPattern, 'i'); // 'i' = ignorar mayúsculas
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    tr[i].style.display = regex.test(txtValue) ? "" : "none";
-                }
-            }
+      locaciones.forEach(lugar => {
+        if (regex.test(lugar.nombre)) {
+          const li = document.createElement('li');
+          const nombre = document.createElement('b');
+          const precio = document.createElement('p');
+          nombre.textContent = lugar.nombre;
+          precio.innerHTML = `<b>$</b> ${lugar.precio}`;
+          li.appendChild(nombre);
+          li.appendChild(precio);
+          lista.appendChild(li);
         }
+      });
+    }
 
+    // Llamada inicial para mostrar todo
+    mostrarLocaciones();
+
+    // Función para buscar
+    function Buscar() {
+      const input = document.getElementById("buscador").value.toLowerCase();
+      mostrarLocaciones(input);
+    }
     </script>
 </body>
 
