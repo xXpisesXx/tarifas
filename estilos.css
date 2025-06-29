@@ -1,55 +1,49 @@
 :root {
-    --text-color-pri: rgb(32, 33, 36);
-    --text-color-seg: rgb(95, 99, 104);
-    --text-color-ter: #20BEFF;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 0 solid rgb(218, 220, 224);
-}
-
-body {
-    padding: 1rem;
-    color: var(--text-color-pri);
-}
-
-input[type=text] {
-    background-image: url('searchicon.svg');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border-width: 1px;
-    margin-bottom: 12px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    border-width: 1px;
-    font-size: 18px;
-}
-
-thead tr th:first-child,
-tbody tr td:first-child {
-    text-align: left;
-    width: 75%;
-}
-
-thead tr th:last-child,
-tbody tr td:last-child {
-    text-align: end;
-    width: 25%;
-}
-
-thead th, tbody tr td {padding: 12px;}
-
-tr {border-bottom-width: 1px;}
-
-th, tr:hover {background-color: #f1f1f1;}
+      --rojo: #e40051;
+      --titulo: #333;
+      --texto: #666;
+      --suave: rgb(218, 220, 224);
+      --fondo: #eee;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1rem;
+    }
+    body { 
+      background: var(--fondo);
+      heigth: 100vh;
+      padding: 1rem;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1rem;
+    }
+    input[type=text] {
+      background-image: url('searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      background: var(--suave);
+      width: 100%;
+      caret-color: var(--rojo);
+      border: none;
+      outline: none;
+      border-radius: .5rem;
+      padding: 12px 20px 12px 40px;
+    }
+    ul {
+      padding: 0 1rem;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1rem;
+    }
+    li:hover > * {
+       color: var(--titulo);
+    }
+    li::marker, b {
+      color: var(--rojo);
+    }
+    p, p b {
+      color: var(--texto);
+    }
